@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Mail\Websitemail;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -40,5 +43,34 @@ class AdminController extends Controller
     {
         Auth::guard('admin')->logout();
         return redirect()->route('admin.login')->with('success', 'Logout Success');
+    } //End Method
+
+    public function AdminForgetPassword()
+    {
+        return view('admin.forget_password');
+    } // End Method
+
+    public function AdminPasswordSubmit(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+        ]);
+
+        $admin_data = Admin::where('email', $request->email)->first();
+        if (!$admin_data) {
+            return redirect()->back()->with('error', 'Email Not Found');
+        }
+        $token = hash('sha256', time());
+        $admin_data->token = $token;
+        $admin_data->update();
+
+        $reset_link = url('admin/reset-password/' . $token . '/' .
+            $request->email);
+        $subject = "Reset Password";
+        $message = "Please Click On below link to reset password<br>";
+        $message .= "<a href=' " . $reset_link . " '>Click Here</a>";
+
+        Mail::to($request->email)->send(new Websitemail($subject, $message));
+        return redirect()->back()->with('success', 'Reset Password Link Send On Your Email');
     } //End Method
 }
