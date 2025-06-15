@@ -15,7 +15,6 @@ class AdminController extends Controller
 
     public function AdminDashboard()
     {
-
         return view('admin.admin_dashboard');
     } // End Method
 
@@ -35,5 +34,11 @@ class AdminController extends Controller
         } else {
             return redirect()->route('admin.login')->with('error', 'Invalid Account');
         }
+    } //End Method
+
+    public function AdminLogout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.login')->with('success', 'Logout Success');
     } //End Method
 }
