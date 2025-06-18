@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +28,7 @@ Route::middleware('admin')->group(function () {
 
     Route::get('/admin/change.password', [AdminController::class, 'AdminChangePassword'])
         ->name('admin.change.password');
-    Route::Post('/admin/password/update', [AdminController::class, 'AdminPasswordUpdate'])
+    Route::get('/admin/password.password', [AdminController::class, 'AdminChangePassword'])
         ->name('admin.password.update');
 });
 
@@ -47,3 +48,9 @@ Route::get('/admin/reset-password/{token}/{email}', [AdminController::class, 'Ad
 
 Route::post('/admin/reset_password_submit', [AdminController::class, 'AdminResetPasswordSubmit'])
     ->name('admin.reset_password_submit');
+
+//End All Admin Route//
+
+//Start All Client Controller Route
+Route::get('/client/login', [ClientController::class, 'ClientLogin'])->name('client.login');
+Route::get('/client/register', [ClientController::class, 'ClientRegister'])->name('client.register');
