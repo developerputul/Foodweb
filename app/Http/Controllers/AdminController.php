@@ -146,4 +146,11 @@ class AdminController extends Controller
         }
     }
     //End Private Method
+
+    public function AdminChangePassword()
+    {
+        $id = Auth::guard('admin')->id();
+        $profileData = Admin::find($id);
+        return view('admin.admin_change_password', compact('profileData'));
+    } //End Method
 }
