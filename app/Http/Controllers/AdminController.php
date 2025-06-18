@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Mail\Websitemail;
 use App\Models\Admin;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Mail;
+
+use function Laravel\Prompts\alert;
 
 class AdminController extends Controller
 {
@@ -153,4 +156,31 @@ class AdminController extends Controller
         $profileData = Admin::find($id);
         return view('admin.admin_change_password', compact('profileData'));
     } //End Method
+
+    public function AdminPasswordUpdate(Request $request)
+    {
+        $admin = Auth::guard('admin')->user();
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+        ]);
+        if (!Hash::check($request->old_password, $admin->password)) {
+
+            $notification = array(
+                'message' => 'Old Password Dose Not Match',
+                'alert-type' => 'error',
+            );
+            return back()->with($notification);
+        }
+        //Update The New Password
+
+        Admin::whereId($admin->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+        $notification = array(
+            'message' => 'Password Change Successfully',
+            'alert-type' => 'success',
+        );
+        return back()->with($notification);
+    } // End Method
 }
