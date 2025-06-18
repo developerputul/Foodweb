@@ -20,6 +20,7 @@
         <link href="{{asset('Backend/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{asset('Backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+        
 
     </head>
 
@@ -58,7 +59,7 @@
                         <li>{{ Session::get('success') }}</li>
                     @endif
 
-            <form class="mt-4 pt-2" action="{{ route('admin.login_submit') }}" method="post">
+            <form class="mt-4 pt-2" action="{{ route('client.register.submit') }}" method="post">
                 @csrf
 
                 <div class="mb-3">
@@ -88,7 +89,7 @@
                         </div>
                         <div class="flex-shrink-0">
                             <div class="">
-                                <a href="{{ route('admin.forget_password') }}" class="text-muted">Forgot password?</a>
+                                <a href="#" class="text-muted">Forgot password?</a>
                             </div>
                         </div>
                     </div>
@@ -108,7 +109,7 @@
                     
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Log In</button>
+                    <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Register</button>
                 </div>
             </form>
 
@@ -173,6 +174,8 @@
         <script src="{{asset('Backend/assets/libs/pace-js/pace.min.js')}}"></script>
         <!-- password addon init -->
         <script src="{{asset('Backend/assets/js/pages/pass-addon.init.js')}}"></script>
+
+        
 
     </body>
 
