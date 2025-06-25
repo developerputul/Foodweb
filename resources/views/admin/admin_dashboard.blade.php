@@ -17,6 +17,11 @@
         <!-- preloader css -->
         <link rel="stylesheet" href="{{asset('Backend/assets/css/preloader.min.css')}}" type="text/css" />
 
+         <!-- DataTables -->
+        <link href="{{ asset('Backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('Backend/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+
+
         <!-- Bootstrap Css -->
         <link href="{{asset('Backend/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -25,8 +30,8 @@
         <link href="{{asset('Backend/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
         
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
-
-
+        
+    
     </head>
 
     <body>
@@ -62,6 +67,12 @@
         <script src="{{asset('Backend/assets/libs/feather-icons/feather.min.js')}}"></script>
         <!-- pace js -->
         <script src="{{asset('Backend/assets/libs/pace-js/pace.min.js')}}"></script>
+
+        <!-- Required datatable js -->
+        <script src="{{ asset('Backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('Backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+        <!-- Datatable init js -->
+        <script src="{{ asset('Backend/assets/js/pages/datatables.init.js') }}"></script>  
 
         <!-- apexcharts -->
         <script src="{{asset('Backend/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
