@@ -80,6 +80,7 @@ Route::middleware('admin')->group(function () {
 
     Route::controller(CategoryController::class)->group(function () {
         Route::get('/all/category', 'AllCategory')->name('all.category');
+        Route::get('/add/category', 'AddCategory')->name('add.category');
     });
 });
 //End Admin Middleware
