@@ -77,6 +77,9 @@
         <!-- apexcharts -->
         <script src="{{asset('Backend/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="{{ asset('Backend/assets/js/code.js') }}"></script>
+
         <!-- Plugins js-->
         <script src="{{asset('Backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
         <script src="{{asset('Backend/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js')}}"></script>
@@ -85,6 +88,7 @@
 
         <script src="{{asset('Backend/assets/js/app.js')}}"></script>
         <script src="{{asset('Backend/assets/js/validate.min.js')}}"></script>
+        
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
