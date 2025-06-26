@@ -123,4 +123,6 @@ class RestaurantController extends Controller
         $city = City::latest()->get();
         return view('client.backend.product.add_product', compact('category', 'menu', 'city'));
     } //End Method
+
+    public function StoreProduct(Request $request) {} //End Method
 }

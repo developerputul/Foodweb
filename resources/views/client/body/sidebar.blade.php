@@ -47,8 +47,8 @@
                                     </li>
         
                                     <li>
-                                        <a href="{{ route('add.menu') }}">
-                                            <span data-key="t-chat">Add Menu</span>
+                                        <a href="{{ route('add.product') }}">
+                                            <span data-key="t-chat">Add Product</span>
                                         </a>
                                     </li>
                                 </ul>
