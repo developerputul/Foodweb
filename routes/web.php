@@ -109,5 +109,15 @@ Route::middleware('client')->group(function () {
         Route::post('/menu/update', 'UpdateMenu')->name('menu.update');
         Route::get('/delete/menu/{id}', 'DeleteMenu')->name('delete.menu');
     });
+
+    //Product Route Section
+    Route::controller(RestaurantController::class)->group(function () {
+        Route::get('/all/product', 'AllProduct')->name('all.product');
+        Route::get('/add/menu', 'AddMenu')->name('add.menu');
+        Route::post('/menu/city', 'StoreMenu')->name('menu.store');
+        Route::get('/edit/menu/{id}', 'EditMenu')->name('edit.menu');
+        Route::post('/menu/update', 'UpdateMenu')->name('menu.update');
+        Route::get('/delete/menu/{id}', 'DeleteMenu')->name('delete.menu');
+    });
 });
 //End Client Middleware

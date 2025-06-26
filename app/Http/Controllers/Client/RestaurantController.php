@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
@@ -102,5 +103,14 @@ class RestaurantController extends Controller
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
+    } //End Method
+
+    ///Product all Method
+
+    public function AllProduct()
+    {
+
+        $product = Product::latest()->get();
+        return view('client.backend.product.all_product', compact('product'));
     } //End Method
 }
