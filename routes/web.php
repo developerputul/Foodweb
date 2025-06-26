@@ -103,8 +103,9 @@ Route::middleware('client')->group(function () {
 
     Route::controller(RestaurantController::class)->group(function () {
         Route::get('/all/city', 'AllMenu')->name('all.menu');
+        Route::get('/add/menu', 'AddMenu')->name('add.menu');
+        Route::post('/menu/city', 'StoreMenu')->name('menu.store');
 
-        Route::post('/store/city', 'StoreCity')->name('city.store');
         Route::get('/edit/city/{id}', 'EditCity');
         Route::post('/update/city', 'UpdateCity')->name('city.update');
         Route::get('/delete/city/{id}', 'DeleteCity')->name('delete.city');
