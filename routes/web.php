@@ -115,8 +115,8 @@ Route::middleware('client')->group(function () {
         Route::get('/all/product', 'AllProduct')->name('all.product');
         Route::get('/add/product', 'AddProduct')->name('add.product');
         Route::post('/product/store', 'StoreProduct')->name('product.store');
+        Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
 
-        Route::get('/edit/menu/{id}', 'EditMenu')->name('edit.menu');
         Route::post('/menu/update', 'UpdateMenu')->name('menu.update');
         Route::get('/delete/menu/{id}', 'DeleteMenu')->name('delete.menu');
     });
