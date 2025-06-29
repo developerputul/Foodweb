@@ -84,6 +84,8 @@
         <script src="{{asset('Backend/assets/js/pages/dashboard.init.js')}}"></script>
 
         <script src="{{asset('Backend/assets/js/app.js')}}"></script>
+        
+          <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
         <script src="{{ asset('Backend/assets/js/validate.min.js') }}"></script>
 

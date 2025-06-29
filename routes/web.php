@@ -118,6 +118,7 @@ Route::middleware('client')->group(function () {
         Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
         Route::post('/product/update', 'ProductUpdate')->name('product.update');
         Route::get('/delete/product/{id}', 'DeleteProduct')->name('delete.product');
+        Route::get('/changeStatus', 'ChangeStatus');
     });
 });
 //End Client Middleware
