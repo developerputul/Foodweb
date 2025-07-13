@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Gllery;
 use App\Models\Menu;
 use App\Models\Product;
 use Carbon\Carbon;
@@ -259,4 +260,13 @@ class RestaurantController extends Controller
         return response()->json(['success' => 'Status Change Successfully']);
     }
     // End Method 
+
+    /////////////All Gallery Method////////////
+
+    public function AllGallery()
+    {
+
+        $gallery = Gllery::latest()->get();
+        return view('client.backend.gallery.all_gallery', compact('gallery'));
+    } //End Method
 }
