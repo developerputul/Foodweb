@@ -67,7 +67,7 @@
                                     </li>
         
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ route('add.gallery') }}">
                                             <span data-key="t-chat">Add Gallery</span>
                                         </a>
                                     </li>

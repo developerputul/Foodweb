@@ -124,8 +124,8 @@ Route::middleware('client')->group(function () {
     //Gallery Route Section
     Route::controller(RestaurantController::class)->group(function () {
         Route::get('/all/gallery', 'AllGallery')->name('all.gallery');
-        Route::get('/add/product', 'AddProduct')->name('add.product');
-        Route::post('/product/store', 'StoreProduct')->name('product.store');
+        Route::get('/add/gallery', 'AddGallery')->name('add.gallery');
+        Route::post('/gallery/store', 'StoreGallery')->name('gallery.store');
         Route::get('/edit/product/{id}', 'EditProduct')->name('edit.product');
         Route::post('/product/update', 'ProductUpdate')->name('product.update');
         Route::get('/delete/product/{id}', 'DeleteProduct')->name('delete.product');
